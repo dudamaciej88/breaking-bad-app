@@ -1,6 +1,6 @@
 import React from "react";
 import CharacterItem, { ItemType } from "./CharacterItem";
-
+import Spinner from "../UI/Spinner";
 
 type Props = {
   isLoading: boolean;
@@ -9,11 +9,11 @@ type Props = {
 
 const CharacterGrid: React.FC<Props> = ({ isLoading, items }) => {
   return isLoading ? (
-    <h1>Loading...</h1>
+    <Spinner />
   ) : (
     <section className="cards">
       {items.map((item) => (
-        <CharacterItem key={item.char_id} item={item}/>
+        <CharacterItem key={item.char_id} item={item} />
       ))}
     </section>
   );
